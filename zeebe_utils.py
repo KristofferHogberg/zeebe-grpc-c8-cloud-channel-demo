@@ -69,3 +69,13 @@ async def run_process_with_result():
         "processInstanceKey": process_instance.processInstanceKey
     }
     return result
+
+
+async def get_topology():
+    zeebe_client = await get_zeebe_client()
+    topology = zeebe_client.Topology(gateway_pb2.TopologyRequest())
+
+    return topology
+
+
+
